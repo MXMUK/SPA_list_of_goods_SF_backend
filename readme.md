@@ -1,6 +1,3 @@
-# Accounting app (with Node.js and PostgreSQL)
-Take the Accounting app from prev lesson and use PostgreSQL as a storage
+# app (with Node.js, PostgreSQL and sequelize)
+Creaated for [SPA_list_of_goods_SF app](https://github.com/MXMUK/SPA_list_of_goods_SF)
 
-- Implement CRUD page to manage categories
-
-**Read [the guideline](https://github.com/mate-academy/js_task-guideline/blob/master/README.md) before start**
