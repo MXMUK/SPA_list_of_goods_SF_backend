@@ -25,6 +25,26 @@ const Good = db.define('Good', {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  rating: {
+    type: DataTypes.FLOAT,
+    allowNull: false,
+  },
+  stock: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  category: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  publicationYear: {
+    type: DataTypes.NUMBER,
+    allowNull: true,
+  },
+  author: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
 }, {
   tableName: 'goods',
   createdAt: false,

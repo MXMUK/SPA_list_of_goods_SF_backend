@@ -10,9 +10,9 @@ function getById(GoodId) {
   return Good.findByPk(GoodId);
 }
 
-function addOne(name) {
+function addOne(body) {
   return Good.create({
-    name,
+    ...body,
   });
 }
 

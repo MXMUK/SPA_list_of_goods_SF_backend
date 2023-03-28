@@ -23,18 +23,23 @@ const getOne = async(req, res) => {
 };
 
 const add = async(req, res) => {
-  const { name } = req.body;
+  const { name, description, photo, rating, stock, category, price } = req.body;
 
-  if (!name) {
+  if (!name || !description || !rating || !price || !photo || !stock || !category) {
     res.sendStatus(400);
 
     return;
   };
 
-  const newGood = await goodsService.addOne(name);
+  try{
+    await goodsService.addOne( req.body);
+  } catch (err){
+    console.log(err);
+    return;
+  }
 
   res.statusCode = 201;
-  res.send(newGood);
+  res.send(req.body);
 };
 
 const remove = (req, res) => {
@@ -47,9 +52,6 @@ const remove = (req, res) => {
 const update = async(req, res) => {
   const { goodId } = req.params;
   const { name } = req.body;
-
-  // eslint-disable-next-line no-console
-  console.log(goodId);
 
   if (!goodId || !name) {
     res.sendStatus(400);
